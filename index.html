@@ -1325,7 +1325,9 @@
 			if (!projects[key]) key = keys[0];
 			var p = projects[key];
 
-			document.title = p.title + " | Pooja Patil";
+			if (document.getElementById("pd-title")) {
+	document.title = p.title + " | Pooja Patil";
+}
 			$("#pd-crumb").text(p.title);
 			$("#pd-tagline").text(p.tagline);
 			$("#pd-title").text(p.title);
