@@ -4343,16 +4343,22 @@ a.button.button--moema.button--text-thick.button--text-upper.button--size-s {
     }
 }
 
+
 .page-loader {
     z-index: 1111111111111;
     width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background-color: #21026f;
-    height: 400vw;
-    position: fixed;
 }
+
 
 body.menu-layer.light .about-me,
 body.menu-layer.light .Experience,
@@ -5566,6 +5572,45 @@ a#relatedd {
     border-radius: 8px;
 }
 
+.project-screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: start;
+    gap: 18px;
+}
+
+.project-screenshots .img-data-portfolio {
+    min-width: 0;
+    margin: 0;
+}
+
+.project-screenshots figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 8px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f3f1f8;
+}
+
+.project-screenshots .img-data-portfolio.img-size-one img,
+.project-screenshots img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+@media (max-width: 767.98px) {
+    .project-screenshots {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
 /* prev / next */
 .pd-modal .prev-work-one {
     display: flex;
@@ -5582,14 +5627,48 @@ a#relatedd {
     min-height: calc(100% - var(--bs-modal-margin) * 0) !important;
     min-width: calc(100% - var(--bs-modal-margin) * 5) !important;
 }
+
 @media (max-width: 767.98px) {
-	.pd-modal .prev-work-one .pw-text {
-		display: none;
-	}
-	.pd-modal .prev-work-one {
-		justify-content: space-between;
-	}
+    .pd-modal .prev-work-one .pw-text {
+        display: none;
+    }
+
+    .pd-modal .prev-work-one {
+        justify-content: space-between;
+    }
 }
 
 .bg-transparent {
-       background-color: white !important;}
+    background-color: white !important;
+}
+
+
+.modal-content {
+    background-color: #eeddff !important;
+}
+
+
+
+/* Stop sideways overflow (AOS fade-left/right) on mobile & tablet */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+
+    html,
+    body {
+        overflow-x: clip;
+    }
+}
+
+/* Tablet & mobile: animate up instead of from the side */
+@media (max-width: 991.98px) {
+
+    html [data-aos="fade-right"]:not(.aos-animate),
+    html [data-aos="fade-left"]:not(.aos-animate) {
+        transform: translate3d(0, 40px, 0);
+    }
+}

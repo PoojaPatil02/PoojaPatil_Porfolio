@@ -658,7 +658,8 @@
 							data-aos-delay="400" data-aos-duration="500">
 							<div class="blog-data">
 								<a href="portfolio-details-2.html?project=german">
-									<img alt="German Learning Website screenshot" src="img/blog-3.jpg">
+									<img alt="German Learning Website screenshot"
+										src="img/proj/Screenshot_4-10-2026_20730_localhost.jpeg">
 								</a>
 								<h4><a class="magic-hover magic-hover__square"
 										href="portfolio-details-2.html?project=german">
@@ -669,7 +670,7 @@
 									<i class="fa-solid">Details</i></a>
 								<a class="js-screenshots" href="javascript:void(0)"
 									style="display: flex;justify-content: flex-end;"
-									data-images="img/proj/german-1.png,img/proj/german-2.png,img/proj/german-3.png,img/proj/german-4.png">
+									data-images="img/proj/Screenshot_4-10-2026_20730_localhost.jpeg,img/proj/Screenshot_4-10-2026_20813_localhost.jpeg,img/proj/Screenshot_4-10-2026_20834_localhost.jpeg,img/proj/Untitled%20Design.jpg,img/proj/Screenshot_4-10-2026_201748_localhost.jpeg,img/proj/Screenshot_4-10-2026_20185_localhost.jpeg,img/proj/Screenshot%202026-10-04%20203402.png">
 									<i class="fa-solid">Screenshots</i></a>
 							</div>
 						</div>
@@ -992,17 +993,29 @@
 		</div>
 	</div> -->
 
-	<div class="modal fade" id="shotModal" tabindex="-1" aria-label="Project screenshots" aria-hidden="true">
-		<div class="modal-dialog modal-xl modal-dialog-centered">
-			<div class="modal-content bg-transparent border-0">
-				<button type="button" class="btn-close btn-close-white ms-auto mb-2" data-bs-dismiss="modal"
-					aria-label="Close"></button>
-				<div id="shotCarousel" class="carousel slide">
-					<div class="carousel-inner" id="shotInner"></div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#shotCarousel"
-						data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-					<button class="carousel-control-next" type="button" data-bs-target="#shotCarousel"
-						data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+	<div class="modal fade" id="shotModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content pd-modal">
+
+				<div class="modal-header border-0">
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body">
+					<div id="shotCarousel" class="carousel slide">
+						<div class="carousel-inner" id="shotInner"></div>
+
+					</div>
+				</div>
+				<div class="modal-footer border-0">
+					<div class="prev-work-one w-100">
+						<a class="magic-hover magic-hover__square" type="button" data-bs-target="#shotCarousel"
+							data-bs-slide="prev"><i class="fa-solid fa-arrow-left"></i></a>
+						<a class="magic-hover magic-hover__square" type="button" data-bs-target="#shotCarousel"
+							data-bs-slide="next"><i class="fa-solid fa-arrow-right"></i></a>
+						
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1072,28 +1085,26 @@
 
 								<!-- RIGHT: screenshots -->
 								<div class="col-lg-6">
-									<div class="img-data-portfolio img-size-one hover06">
-										<figure><img alt="Screenshot 1" id="pm-img-0"></figure>
+									<div class="img-data-portfolio img-size-one" id="pm-video-box" style="display:none">
+										<video id="pm-video" controls muted playsinline preload="metadata"
+											style="width:100%;border-radius:8px;background:#000"></video>
 									</div>
-									<div class="img-data-portfolio img-size-one hover06">
-										<figure><img alt="Screenshot 2" id="pm-img-1"></figure>
-									</div>
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="img-data-portfolio hover06">
-												<figure><img alt="Screenshot 3" id="pm-img-2"></figure>
-											</div>
+									<div class="project-screenshots">
+										<div class="img-data-portfolio img-size-one">
+											<figure><img alt="Screenshot 1" id="pm-img-0"></figure>
 										</div>
-										<div class="col-lg-6">
-											<div class="img-data-portfolio hover06">
-												<figure><img alt="Screenshot 4" id="pm-img-3"></figure>
-											</div>
+										<div class="img-data-portfolio img-size-one hover06">
+											<figure><img alt="Screenshot 2" id="pm-img-1"></figure>
+										</div>
+										<div class="img-data-portfolio">
+											<figure><img alt="Screenshot 3" id="pm-img-2"></figure>
+										</div>
+										<div class="img-data-portfolio">
+											<figure><img alt="Screenshot 4" id="pm-img-3"></figure>
 										</div>
 									</div>
 								</div>
-
 							</div>
-						</div>
 					</section>
 				</div>
 
@@ -1178,7 +1189,7 @@
 			inner.innerHTML = images.map(function (src, i) {
 				return '<div class="carousel-item' + (i === 0 ? ' active' : '') + '">' +
 					'<img src="' + src.trim() + '" class="d-block w-100" alt="Screenshot ' + (i + 1) + '" ' +
-					'style="max-height:80vh;object-fit:contain;"></div>';
+					'style="object-fit:contain;"></div>';
 			}).join('');
 
 			// Hide arrows when there is only one image
@@ -1222,12 +1233,20 @@
 				tech: "C#, ASP.NET, SQL Server, HTML, CSS, JavaScript",
 				desc: "A web platform for beginners who want to learn German step by step. Lessons are organised by level, with quizzes to test progress. I developed it end to end using ASP.NET and SQL Server, including the lesson content structure, the quiz and score logic, and an admin module for adding new content.",
 				features: [
-					"Lessons by level (A1, A2...)",
-					"Quizzes with score tracking",
-					"Admin module to add content",
-					"Responsive design"
+					"17 lessons: alphabets, numbers, colors, family and more",
+					"Illustrated stories, each with a Read now page",
+					"20-question A1 exam with pass/fail result",
+					"My Results page that tracks each attempt",
+					"Free book downloads with audio files"
 				],
-				images: ["img/proj/german-1.png", "img/proj/german-2.png", "img/proj/german-3.png", "img/proj/german-4.png"],
+				video: "img/proj/german-test%20video_1.mp4",
+				poster: "img/proj/Screenshot_4-10-2026_20730_localhost.jpeg",
+				images: [
+					"img/proj/Screenshot_4-10-2026_20813_localhost.jpeg",
+					"img/proj/Screenshot_4-10-2026_20834_localhost.jpeg",
+					"img/proj/Screenshot%202026-10-04%20203402.png",
+					"img/proj/Untitled%20Design.jpg"
+				],
 				links: []
 			},
 
@@ -1326,8 +1345,8 @@
 			var p = projects[key];
 
 			if (document.getElementById("pd-title")) {
-	document.title = p.title + " | Pooja Patil";
-}
+				document.title = p.title + " | Pooja Patil";
+			}
 			$("#pd-crumb").text(p.title);
 			$("#pd-tagline").text(p.tagline);
 			$("#pd-title").text(p.title);
@@ -1397,17 +1416,36 @@
 				$id('pm-links').innerHTML = (p.links || []).map(function (l) {
 					return '<a target="_blank" rel="noopener" href="' + l.url + '">' + l.label + '</a>';
 				}).join('');
-
+				// video (optional per project)
+				var vBox = $id('pm-video-box');
+				var vEl = $id('pm-video');
+				if (p.video) {
+					vEl.src = p.video;
+					vEl.poster = p.poster || '';
+					vBox.style.display = '';
+				} else {
+					vEl.pause();
+					vEl.removeAttribute('src');
+					vEl.load();
+					vBox.style.display = 'none';
+				}
 				// screenshots: fill 4 fixed slots, hide unused ones
 				for (var i = 0; i < 4; i++) {
 					var img = $id('pm-img-' + i);
 					var box = img.closest('.img-data-portfolio');
 					if (p.images[i]) {
+						img.onerror = function () {
+							this.closest('.img-data-portfolio').hidden = true;
+						};
+						img.onload = function () {
+							this.closest('.img-data-portfolio').hidden = false;
+						};
+						box.hidden = false;
 						img.src = p.images[i];
 						box.style.display = '';
 					} else {
 						img.removeAttribute('src');
-						box.style.display = 'none';
+						box.hidden = true;
 					}
 				}
 
