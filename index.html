@@ -94,9 +94,9 @@
 					<div class="logo-icon">
 						<a class="magic-hover magic-hover__square" href="index.html">
 							<img class="light" src="img/proj/image.png" alt="logo" style="
-							width: 100px;
+							width: 70px;
 							border-radius: 100%;
-							height: 100px;
+							height: 70px;
 							box-shadow: 0 0 10px 2px white;
 							border: 5px solid #4403e5;
 						">
@@ -141,13 +141,17 @@
 			</div>
 		</div>
 
-		<div class="mobile-nav" id="mobile-nav" style="display: block;">
+		<div class="mobile-nav" id="mobile-nav">
+			<button type="button" class="close-menu" aria-label="Close menu">
+				&times;
+			</button>
+
 			<div class="mobile-nav-img-data">
 				<a class="magic-hover magic-hover__square" href="index.html">
 					<img alt="logo" src="img/proj/image.png" style="
-					width: 100px;
+					width: 70px;
 					border-radius: 100%;
-					height: 100px;
+					height: 70px;
 					box-shadow: 0 0 10px 2px white;
 					border: 5px solid #4403e5;
 				">
@@ -637,7 +641,8 @@
 							data-aos-delay="400" data-aos-duration="500">
 							<div class="blog-data">
 								<a href="portfolio-details-2.html?project=travel">
-									<img alt="Travel Booking System screenshot" src="img/blog-3.jpg">
+									<img alt="Travel Booking System: plan trips, book stays and manage bookings online"
+										src="img/proj/travel-cover.jpg">
 								</a>
 								<h4><a class="magic-hover magic-hover__square"
 										href="portfolio-details-2.html?project=travel">
@@ -652,14 +657,12 @@
 									<i class="fa-solid">Screenshots</i></a>
 							</div>
 						</div>
-
 						<!-- German Learning Website -->
 						<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 swiper-slide d-flex" data-aos="fade-right"
 							data-aos-delay="400" data-aos-duration="500">
 							<div class="blog-data">
 								<a href="portfolio-details-2.html?project=german">
-									<img alt="German Learning Website screenshot"
-										src="img/proj/Screenshot_4-10-2026_20730_localhost.jpeg">
+									<img alt="German Learning Website screenshot" src="img/proj/german.jpg">
 								</a>
 								<h4><a class="magic-hover magic-hover__square"
 										href="portfolio-details-2.html?project=german">
@@ -1014,7 +1017,7 @@
 							data-bs-slide="prev"><i class="fa-solid fa-arrow-left"></i></a>
 						<a class="magic-hover magic-hover__square" type="button" data-bs-target="#shotCarousel"
 							data-bs-slide="next"><i class="fa-solid fa-arrow-right"></i></a>
-						
+
 					</div>
 				</div>
 			</div>
@@ -1090,16 +1093,16 @@
 											style="width:100%;border-radius:8px;background:#000"></video>
 									</div>
 									<div class="project-screenshots">
-										<div class="img-data-portfolio img-size-one">
+										<div class="img-data-portfolio img-size-one hover06">
 											<figure><img alt="Screenshot 1" id="pm-img-0"></figure>
 										</div>
 										<div class="img-data-portfolio img-size-one hover06">
 											<figure><img alt="Screenshot 2" id="pm-img-1"></figure>
 										</div>
-										<div class="img-data-portfolio">
+										<div class="img-data-portfolio img-size-one hover06">
 											<figure><img alt="Screenshot 3" id="pm-img-2"></figure>
 										</div>
-										<div class="img-data-portfolio">
+										<div class="img-data-portfolio img-size-one hover06">
 											<figure><img alt="Screenshot 4" id="pm-img-3"></figure>
 										</div>
 									</div>
@@ -1146,6 +1149,30 @@
 	<script src="js/aos.js"></script>
 	<!-- custom -->
 	<script src="js/custom.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// Open / close menu using hamburger icon
+			$('.bar-menu').on('click', function (e) {
+				e.preventDefault();
+				$('#mobile-nav').addClass('open');
+			});
+
+			// Close menu using close button
+			$('#mobile-nav').on('click', '.close-menu', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				$('#mobile-nav').removeClass('open');
+			});
+
+			// Close menu and navigate to selected section
+			$('#mobile-nav').on('click', 'a[href^="#"]', function () {
+				$('#mobile-nav').removeClass('open');
+				// Do not prevent default: browser will navigate to the section.
+			});
+
+		});
+	</script>
 	<script>
 
 		$(function () {

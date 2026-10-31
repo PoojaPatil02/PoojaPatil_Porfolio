@@ -878,6 +878,7 @@
 
 	#mobile-nav.hmburger-menu {
 		width: 50%;
+
 	}
 
 	.error:before {
@@ -2826,4 +2827,25 @@
 	 .modal-content{
         top:0;
        }
+}
+.close-menu {
+        position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: #000;
+    background: #a1a1a1;
+    border: none;
+    cursor: pointer;
+    z-index: 99999;
+    width: 10%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+#mobile-nav.hmburger-menu{
+	overflow: hidden;
 }

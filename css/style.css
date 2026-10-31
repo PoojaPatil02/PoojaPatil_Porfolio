@@ -4142,11 +4142,23 @@ li.menu-item-has-children.active {
 }
 
 #mobile-nav ul {
-    margin-top: 30px;
+    width: 100%;
+    padding: 0;
 }
 
-#mobile-nav ul li ul {
-    margin-top: 0px;
+#mobile-nav ul li {
+    width: 100%;
+    padding: 0;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+#mobile-nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 0 25px;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 li.menu-item-has-children.active>a {
@@ -5593,6 +5605,7 @@ a#relatedd {
     overflow: hidden;
     border-radius: 12px;
     background: #f3f1f8;
+    border: 1px solid #dedede;
 }
 
 .project-screenshots .img-data-portfolio.img-size-one img,
@@ -5642,10 +5655,11 @@ a#relatedd {
     background-color: white !important;
 }
 
-
-.modal-content {
-    background-color: #eeddff !important;
+.carousel-item img{
+    border-radius: 20px;
+    border: 1px solid #dedede;
 }
+
 
 
 
